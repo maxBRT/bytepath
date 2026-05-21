@@ -1,0 +1,21 @@
+{
+  "Lua.diagnostics.globals": [
+    "input",
+        "circle_room"
+  ],
+    "runtime.version": "LuaJIT",
+    "runtime.special": {
+        "love.filesystem.load": "loadfile"
+    },
+    "workspace.library": [
+        "${3rd}/love2d/library"
+    ],
+    "diagnostics.disable": [
+        "duplicate-set-field",
+        "lowercase-global",
+        "unused-local",
+        "redefined-local",
+        "undefined-field",
+        "inject-field"
+    ]
+}

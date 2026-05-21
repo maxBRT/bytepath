@@ -1,0 +1,6 @@
+Input = require("lib.input")
+Timer = require("lib.timer")
+Utils = require("lib.utils")
+Has = require("lib.has")
+Camera = require("lib.camera")
+CameraShake = require("lib.camera_shake")
