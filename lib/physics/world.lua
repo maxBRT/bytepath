@@ -2,7 +2,7 @@ local World = {}
 
 function World:new()
 	local self = {}
-	self.cell_size = 128
+	self.cell_size = SPRITE_SIZE * 4
 	self.cells = {}
 
 	function self:clear() self.cells = {} end

@@ -9,6 +9,11 @@ function Collider:new(x, y, w, h, user_data)
 	self.h = h
 	self.user_data = user_data
 
+	function self:update(dt, x, y)
+		self.x = x - self.w / 2
+		self.y = y - self.h / 2
+	end
+
 	return self
 end
 

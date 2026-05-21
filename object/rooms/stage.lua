@@ -13,8 +13,13 @@ function Stage:new()
 	self.entity_manager:add(Square:new(self.entity_manager, GAME_WIDTH / 3, GAME_HEIGHT / 3))
 
 	function self:update(dt)
+		self.camera_shake:update(dt)
 		camera.smoother = Camera.smooth.damped(5)
 		camera:lockPosition(CENTER_X, CENTER_Y)
+		if input:down("shake") then
+			print("shake")
+			self.camera_shake:shake(0.2, 2)
+		end
 		if self.entity_manager then self.entity_manager:update(dt) end
 	end
 
