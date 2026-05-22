@@ -1,5 +1,4 @@
 local AABB = function(box_a, box_b)
-	print("checking")
 	return (
 		box_a.x < box_b.x + box_b.w
 		and box_a.x + box_a.w > box_b.x

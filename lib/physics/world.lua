@@ -27,6 +27,8 @@ function World:new()
 
 	function self:update(dt) end
 
+	function self:destroy() self.cells = nil end
+
 	function self:debug()
 		for _, c_array in pairs(self.cells) do
 			for _, c in ipairs(c_array) do

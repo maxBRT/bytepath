@@ -1,7 +1,6 @@
 local World = require("lib.physics.world")
 local AABB = require("lib.physics.AABB")
 
----@type EntityManager
 local EntityManager = {}
 
 function EntityManager:new(room)
@@ -49,6 +48,12 @@ function EntityManager:new(room)
 	end
 
 	function self:create_physics_world() self.world = World:new() end
+
+	function self:destroy()
+		if self.world.destroy then self.world:destroy() end
+		if self.room then self.room = nil end
+		if self.game_objects then self.game_objects = nil end
+	end
 
 	return self
 end

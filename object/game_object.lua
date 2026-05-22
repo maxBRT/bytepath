@@ -4,6 +4,7 @@ local GameObject = {}
 
 function GameObject:new(entity_manager, x, y)
 	local self = {}
+	self.__type = "GameObject"
 	self.x = x
 	self.y = y
 	self.id = utils.uuid()
@@ -15,7 +16,16 @@ function GameObject:new(entity_manager, x, y)
 		if self.timer then self.timer:update(dt) end
 	end
 
-	function self:draw() end
+	function self:destroy()
+		self.dead = true
+
+		if self.timer then
+			if self.timer.clear then self.timer:clear() end
+			self.timer = nil
+		end
+
+		self.entity_manager = nil
+	end
 
 	return self
 end
